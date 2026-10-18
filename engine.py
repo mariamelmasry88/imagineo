@@ -6,8 +6,7 @@ import traceback
 import uuid
 import db
 
-# fake=1 skips the models and makes placeholder pictures,
-# so you can try the website on any laptop without a gpu
+# fake=1 skips the models and makes placeholder pictures,so you can try the website on any laptop without a gpu
 fake = os.environ.get("fake") == "1"
 
 state = {"ready": False, "note": "starting", "error": ""}
