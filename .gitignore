@@ -1,0 +1,9 @@
+# accounts, passwords and generated pictures never go to github
+data/
+*.db
+*.log
+check*.jpg
+data.zip
+.env
+__pycache__/
+.ipynb_checkpoints/
