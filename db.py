@@ -78,7 +78,7 @@ def setup():
     con.close()
 
 
-# ---------- accounts ----------
+# accounts 
 
 def hashpw(pw, salt):
     return hashlib.pbkdf2_hmac("sha256", pw.encode(), salt, rounds)
@@ -107,7 +107,7 @@ def signup(name, email, pw):
 def login(name, pw):
     rows = read("select * from users where name = ?", (name.strip().lower(),))
     if not rows:
-        hashpw(pw, b"0" * 16)  # same work for unknown names, so timing tells nothing
+        hashpw(pw, b"0" * 16)  
         return None
     row = rows[0]
     if hmac.compare_digest(hashpw(pw, row["salt"]), row["hash"]):
@@ -145,7 +145,7 @@ def endsession(token):
     write("delete from sessions where token = ?", (digest(token),))
 
 
-# ---------- storyboards ----------
+# storyboards 
 
 def savedboard(userid, idea, story, data, style, level, pics):
     boardid = write(
