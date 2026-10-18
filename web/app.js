@@ -10,7 +10,7 @@
     try { localStorage.setItem(key, value); } catch (e) {}
   }
 
-  // text always goes in with textContent, never innerHTML, so nothing typed or written by the model can run as code
+
   function el(tag, cls, text) {
     const node = document.createElement(tag);
     if (cls) node.className = cls;
@@ -26,10 +26,10 @@
   let statustimer = null;
   const blobs = new Map();
 
-  // ---------- which server to talk to ----------
+  
 
     function pickserver() {
-    // the python server serves this page, so the api is always the same site
+  
     api = "";
     $("server").textContent = "";
   }
@@ -91,7 +91,7 @@
     node.classList.toggle("ok", !!good);
   }
 
-  // ---------- views ----------
+
 
   const views = ["auth", "studio", "library", "detail"];
 
@@ -128,8 +128,7 @@
     go("auth");
   }
 
-  // ---------- server status ----------
-
+ 
   function banner(text, bad) {
     const b = $("banner");
     b.hidden = !text;
@@ -160,7 +159,6 @@
     $("makebtn").disabled = !ready || !!$("progress").offsetParent;
   }
 
-  // ---------- log in and sign up ----------
 
   function showtab(which) {
     $("loginform").hidden = which !== "login";
@@ -213,7 +211,7 @@
     leave();
   }
 
-  // ---------- making a storyboard ----------
+  
 
   function chosen(name) {
     const picked = document.querySelector('input[name="' + name + '"]:checked');
@@ -326,7 +324,6 @@
     $("makebtn").disabled = !ready;
   }
 
-  // ---------- showing a storyboard ----------
 
   function render(box, b, saved) {
     box.replaceChildren();
@@ -385,7 +382,7 @@
     setTimeout(() => URL.revokeObjectURL(a.href), 3000);
   }
 
-  // ---------- saved storyboards ----------
+
 
   async function loadlibrary() {
     const grid = $("grid");
@@ -430,7 +427,6 @@
     }
   }
 
-  // ---------- start ----------
 
   function applyeasy() {
     const on = $("easy").checked;
