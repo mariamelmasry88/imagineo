@@ -29,7 +29,6 @@ def writestory(tok, model, idea, level="easy"):
 
 
 def findjson(text):
-    # the model sometimes wraps json in ```json fences, so take the outer braces
     m = re.search(r"\{.*\}", text, re.DOTALL)
     if not m:
         raise ValueError("no json found")
@@ -37,7 +36,7 @@ def findjson(text):
 
 
 def checkscenes(data):
-    # make sure we really got a list of dicts with text and image, not just a string
+    # make sure i really got a list of dicts with text and image, not just a string
     if not isinstance(data.get("character"), str):
         raise ValueError("character is missing")
     scenes = data.get("scenes")
