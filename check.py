@@ -1,4 +1,4 @@
-# quick test without the website: idea -> story -> scenes -> pictures
+# quick test without the website just the idea and text amd image generation 
 import sys
 from story import loadllm
 from scenes import writestory, getscenes
