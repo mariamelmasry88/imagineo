@@ -50,7 +50,7 @@ class makebody(BaseModel):
     seed: int = Field(ge=0, le=99999)
 
 
-# ---------- login helpers ----------
+# login helpers 
 
 tries = {}
 
@@ -77,7 +77,7 @@ def needuser(token: str = Depends(gettoken)):
     return user
 
 
-# ---------- open endpoints ----------
+#  open endpoints
 
 @app.get("/api/status")
 def status():
@@ -120,7 +120,7 @@ def login(body: loginbody):
     return {"token": db.newsession(user["id"]), "name": user["name"]}
 
 
-# ---------- endpoints that need a login ----------
+# endpoints that need a login 
 
 @app.get("/api/me")
 def me(user=Depends(needuser)):
@@ -202,5 +202,5 @@ def remove(boardid: int, user=Depends(needuser)):
     return {"ok": True}
 
 
-# the website itself, served from the web folder (must come last)
+# the website itself, served from the web folder 
 app.mount("/", StaticFiles(directory=os.path.join(here, "web"), html=True), name="web")
