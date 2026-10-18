@@ -30,12 +30,12 @@ h3 { margin: 0 0 .4rem; font-size: 1.1rem; }
 .muted { color: var(--muted); }
 .small { font-size: .85rem; }
 
-/* soft colored light behind everything */
+
 .glow { position: fixed; z-index: -1; width: 520px; height: 520px; border-radius: 50%; filter: blur(110px); opacity: .35; pointer-events: none; }
 .glow.one { background: var(--accent); top: -160px; left: -120px; }
 .glow.two { background: var(--accent2); bottom: -200px; right: -140px; opacity: .22; }
 
-/* top bar */
+
 .top {
   position: sticky; top: 0; z-index: 10;
   display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;
@@ -64,7 +64,6 @@ nav button.on { background: rgba(139, 92, 246, .2); color: #d8c9ff; }
 main { max-width: 1180px; margin: 0 auto; padding: clamp(1rem, 3vw, 2.5rem); }
 .foot { text-align: center; color: var(--muted); font-size: .8rem; padding: 2rem 1rem; }
 
-/* cards and form parts */
 .card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -103,7 +102,7 @@ input[type="range"] { padding: 0; accent-color: var(--accent); }
 .msg { min-height: 1.3rem; margin: .8rem 0 0; font-size: .9rem; color: var(--bad); }
 .msg.ok { color: var(--good); }
 
-/* log in page */
+
 #auth { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; align-items: center; min-height: 70vh; }
 .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; color: #c4b0ff; margin: 0 0 1rem; }
 .grad { background: linear-gradient(135deg, #a78bfa, #f472b6); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -115,7 +114,7 @@ input[type="range"] { padding: 0; accent-color: var(--accent); }
 .tab { border: 0; background: none; color: var(--muted); padding: .6rem; border-radius: 9px; cursor: pointer; font: inherit; }
 .tab.on { background: rgba(139, 92, 246, .28); color: #fff; }
 
-/* make a storyboard */
+
 .studio { display: grid; grid-template-columns: 370px 1fr; gap: 1.6rem; align-items: start; }
 .controls { position: sticky; top: 5rem; }
 .chips { display: flex; flex-wrap: wrap; gap: .45rem; }
@@ -140,7 +139,7 @@ input[type="range"] { padding: 0; accent-color: var(--accent); }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* a finished storyboard */
+
 .boardtop { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: flex-start; margin-bottom: 1rem; }
 .boardtop h2 { margin-bottom: .5rem; }
 .tags { display: flex; gap: .4rem; flex-wrap: wrap; }
@@ -155,14 +154,14 @@ input[type="range"] { padding: 0; accent-color: var(--accent); }
 .shimmer { background: linear-gradient(100deg, rgba(255,255,255,.05) 30%, rgba(255,255,255,.14) 50%, rgba(255,255,255,.05) 70%) !important; background-size: 200% 100% !important; animation: shimmer 1.4s infinite linear; }
 @keyframes shimmer { to { background-position: -200% 0; } }
 
-/* easy-to-read mode */
+
 .readable { margin: 0; white-space: pre-line; }
 body.easy .readable {
   font-family: "Lexend", system-ui, sans-serif;
   font-size: 1.2rem; line-height: 1.95; letter-spacing: .03em; word-spacing: .14em; text-align: left;
 }
 
-/* saved storyboards */
+
 .head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.1rem; }
 .tile { display: flex; flex-direction: column; gap: .4rem; text-align: left; color: var(--text); cursor: pointer; padding: .8rem; font: inherit; transition: transform .12s ease, border-color .12s ease; }
@@ -170,7 +169,6 @@ body.easy .readable {
 .tile img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; background: rgba(255, 255, 255, .06); }
 .tile strong { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-weight: 500; }
 
-/* toggle switch */
 .switch { display: inline-flex; align-items: center; gap: .55rem; margin: 0; cursor: pointer; color: var(--muted); font-size: .9rem; }
 .switch input { position: absolute; opacity: 0; width: 0; height: 0; }
 .slider { position: relative; width: 38px; height: 22px; border-radius: 999px; background: rgba(255, 255, 255, .18); transition: background .15s ease; flex: none; }
@@ -190,7 +188,7 @@ body.easy .readable {
   * { animation: none !important; transition: none !important; }
 }
 
-/* printing: only the storyboard, black on white */
+
 @media print {
   body { background: #fff !important; color: #000 !important; }
   .glow, .top, .banner, .foot, .controls, .noprint, .actions, .progress, .empty { display: none !important; }
