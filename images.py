@@ -10,18 +10,16 @@ steps = int(os.environ.get("imgsteps", "28"))
 
 
 def loadimager():
-    # this vae stays in fp16 without making black images
     vae = AutoencoderKL.from_pretrained("madebyollin/sdxl-vae-fp16-fix", torch_dtype=torch.float16)
     pipe = StableDiffusionXLPipeline.from_pretrained(
         imgmodel, vae=vae, torch_dtype=torch.float16, variant="fp16", use_safetensors=True
     )
-    # only the part that is working sits on the gpu, so this fits next to the story model on a t4
     pipe.enable_model_cpu_offload()
     return pipe
 
 
 def drawscene(pipe, character, scene, style, seed):
-    # same character text and same seed in every scene helps the hero look similar
+    # same character in every scene helps the hero look similar
     prompt = f"{character}, {scene['image']}, {styles[style]}"
     gen = torch.Generator("cpu").manual_seed(seed)
     out = pipe(
